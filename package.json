@@ -1,0 +1,93 @@
+{
+  "name": "@saran-ign/video-annotation-tool",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./dist/*": "./dist/*"
+  },
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "prepare": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saranIgn/video-annotation-tool.git"
+  },
+  "keywords": [
+    "react",
+    "react-annotation-ts",
+    "react-video-annotation-ts",
+    "video-annotation",
+    "annotation-tool",
+    "media-annotation",
+    "video-editing",
+    "annotation-library",
+    "react-player-ts",
+    "videojs",
+    "interactive-video",
+    "media-markup",
+    "video-tagging",
+    "annotation-plugin",
+    "media-tagging",
+    "annotation-framework",
+    "react-video-tools",
+    "video-annotations-ui",
+    "annotorious",
+    "annotation-software"
+  ],
+  "author": "Saran",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/saranIgn/video-annotation-tool/blob/main/issues"
+  },
+  "homepage": "https://github.com/saranIgn/video-annotation-tool/blob/main/README.md",
+  "files": [
+    "dist/**/*",
+    "README.md"
+  ],
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^7.0.2",
+    "hls.js": "^1.6.2",
+    "lodash": "^4.17.21",
+    "react-icons": "^5.3.0",
+    "react-konva": "^19.0.3"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.8.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.25.9",
+    "@babel/core": "^7.26.0",
+    "@babel/plugin-transform-runtime": "^7.25.9",
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.25.9",
+    "@types/lodash": "^4.17.16",
+    "@types/node": "^22.14.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.1",
+    "babel-loader": "^8.0.0",
+    "css-loader": "^7.1.2",
+    "eslint": "^9.13.0",
+    "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "html-webpack-plugin": "^5.6.3",
+    "style-loader": "^4.0.0",
+    "typescript": "^5.8.2",
+    "webpack": "^5.99.6",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.15.2"
+  }
+}
