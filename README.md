@@ -81,6 +81,7 @@ function App() {
         shapes={allAnnotations}
         setShapes={setAllAnnotations}
         selectedShapeTool={"rectangle"} 
+        videoTimeAnnotation={true}
         videoUrl="https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
       />
     </div>
@@ -178,7 +179,7 @@ const initialShapes = [
 | `videoControls`        | `object`   | `{}`    | Video playback controls ({`autoPlay:true`, `loop:true`}, etc.).                        |
 | `lockEdit`             | `boolean`  | `false` | Disable editing annotations.                                               |
 | `selectedAnnotationData`| `function`| -       | Callback triggered when annotation is selected.                            |
-
+| `videoTimeAnnotation`             | `boolean`  | `true` | Enable editing video annotations particular time. 
 ---
 
 ### Developers

@@ -20,6 +20,7 @@ interface TwoDVideoAnnotationProps {
   annotationColor?: string;
   selectedAnnotationData?: (data: Shape | null) => void;
   videoControls?: Record<string, any>;
+  videoTimeAnnotation:boolean;
 }
 
 const TwoDVideoAnnotation: React.FC<TwoDVideoAnnotationProps> = ({
@@ -32,7 +33,8 @@ const TwoDVideoAnnotation: React.FC<TwoDVideoAnnotationProps> = ({
   lockEdit,
   annotationColor,
   selectedAnnotationData,
-  videoControls
+  videoControls,
+  videoTimeAnnotation
 }) => {
   if (!videoUrl) {
     console.error("Provide a video url");
@@ -57,6 +59,7 @@ const TwoDVideoAnnotation: React.FC<TwoDVideoAnnotationProps> = ({
           hideAnnotations={hideAnnotations || false}
           lockEdit={lockEdit || false}
           annotationColor={annotationColor || '#FF0000'}
+          videoTimeAnnotation={videoTimeAnnotation || true}
         />
       </div>
     </CanvasProvider>
