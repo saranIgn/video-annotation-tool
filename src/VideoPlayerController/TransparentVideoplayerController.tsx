@@ -2,10 +2,11 @@ import React from "react";
 import useVideoController from "./UseVideoPlayerControllerHook";
 import { ImVolumeMute } from "react-icons/im";
 import { ImVolumeMute2 } from "react-icons/im";
-import { FaPauseCircle, FaPlayCircle } from "react-icons/fa";
+import { FaPauseCircle, FaPlayCircle,FaExpand } from "react-icons/fa";
 
 interface TransparentVideoControllerProps {
   playerRef: React.RefObject<HTMLVideoElement>; // Reference to the video player
+  showVideoDuration:boolean;
   dimensions: {
     width: number; // Width of the controller
   };
@@ -16,6 +17,7 @@ const TransparentVideoController: React.FC<TransparentVideoControllerProps> = ({
   playerRef,
   dimensions,
   canvasParentRef,
+  showVideoDuration
 }) => {
   const {
     playing,
@@ -36,7 +38,7 @@ const TransparentVideoController: React.FC<TransparentVideoControllerProps> = ({
     <div
       style={{
         width:dimensions.width,
-        minWidth: dimensions.width,
+        // minWidth: dimensions.width,
         height: "35px",
         minHeight: "20px",
         background: "rgba(0, 0, 0, 0.4)",
@@ -66,13 +68,22 @@ const TransparentVideoController: React.FC<TransparentVideoControllerProps> = ({
         style={{
           flexGrow: 1,
           cursor: "pointer",
-          accentColor: "#ff0000",
+          accentColor: "#396BDC",
+          height: "6px", // optional: slim look
+          borderRadius: "5px", // rounded ends
+          background: "#ddd", // fallback color
         }}
       />
 
       <span style={{ marginRight: "10px", fontSize: "14px" }}>
-        {formatTime(currentTime)} / {formatTime(duration)}
+        {formatTime(currentTime)} {showVideoDuration && <>/ {formatTime(duration)}</>}
       </span>
+      <FaExpand    style={{
+          color: "#fff",
+          cursor: "pointer",
+          fontSize: "18px",
+          marginRight: "10px",
+        }} onClick={handleFullScreen}/>
 
       <select
         onChange={(e) => handleSpeedChange(parseFloat(e.target.value))}
@@ -116,6 +127,7 @@ const TransparentVideoController: React.FC<TransparentVideoControllerProps> = ({
           }}
         />
       )}
+    
     </div>
   );
 };

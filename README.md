@@ -180,6 +180,7 @@ const initialShapes = [
 | `lockEdit`             | `boolean`  | `false` | Disable editing annotations.                                               |
 | `selectedAnnotationData`| `function`| -       | Callback triggered when annotation is selected.                            |
 | `videoTimeAnnotation`             | `boolean`  | `true` | Enable editing video annotations particular time. 
+| `showVideoDuration`             | `boolean`  | `true` | Enable videoDuration. 
 ---
 
 ### Developers

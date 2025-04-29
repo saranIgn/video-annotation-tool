@@ -62,6 +62,7 @@ interface CanvasProps {
   selectedAnnotationData?: (data: Shape | null) => void;
   videoControls?: boolean | Record<string, any>;
   videoTimeAnnotation:boolean;
+  showVideoDuration:boolean;
 }
 
 // In your CanvasProvider types file or at the top of the file
@@ -114,6 +115,7 @@ const Canvas = forwardRef<CanvasRef, CanvasProps>(
       selectedAnnotationData,
       videoControls,
       videoTimeAnnotation,
+      showVideoDuration
     },
     ref
   ) => {
@@ -903,6 +905,8 @@ const Canvas = forwardRef<CanvasRef, CanvasProps>(
           playerRef={videoRef}
           dimensions={dimensions}
           canvasParentRef={canvasParentRef}
+          showVideoDuration={showVideoDuration}
+
         />
       </>
     );

@@ -69,17 +69,21 @@ const useVideoController = (
   };
 
   const handleFullScreen = () => {
-    const parentElement = canvasParentRef.current;
-    if (parentElement) {
-      if (document.fullscreenElement) {
-        document.exitFullscreen();
+    const player = playerRef.current
+    const parent = canvasParentRef.current
+  
+    if (document.fullscreenElement) {
+      document.exitFullscreen()
+    } else {
+      if (parent?.requestFullscreen) {
+        parent.requestFullscreen()
+      } else if (player?.requestFullscreen) {
+        player.requestFullscreen()
       } else {
-        parentElement.requestFullscreen().catch((err) => {
-          console.error(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
-        });
+        console.warn("Fullscreen not supported")
       }
     }
-  };
+  }
 
   const formatTime = (time: number) => {
     const minutes = Math.floor(time / 60);
